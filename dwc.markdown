@@ -1,6 +1,6 @@
 ---
 layout: page
-title: UT08 - Desarrollo Web en entorno Cliente
+title: UT08 - Desarrollo Web en entorno Clientes
 permalink: /dwcut08/
 ---
 
