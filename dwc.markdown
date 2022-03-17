@@ -1,6 +1,6 @@
 ---
 layout: page
-title: UT08 - Firebase
+title: UT08 - Desarrollo Web en entorno Cliente
 permalink: /dwcut08/
 ---
 
@@ -10,14 +10,18 @@ Es una plataforma de apoyo al desarrollo web en la nube creada por Google. Facil
 
 Uno de los servicios que incluye es el _Firestore_ _Database_ la cual permite disponer de una base de datos no relacional y reactiva que sincroniza datos con todos los clientes conectados en tiempo real. Se tratarán las acciones **CRUD** sobre esta base de datos a través del siguiente ejemplo. Para facilitar el seguimiento del mismo, se aconseja visitar [este enlace](https://firebase.google.com/docs/firestore/manage-data/add-data) donde se detallan más los pasos a seguir. Huelga decir que será necesario disponer de una cuenta en este servicio para poder trabajar con el ejemplo.
 
+---
+
 ## Tipos de bases de datos
+
+---
 
 Existen dos tipos principales de bases de datos: las **SQL** o relacionales y las **NoSQL**. Las primeras son muy populares entre lenguajes como **PHP** y están orientadas a aplicaciones muy complejas (la mayoría de las veces). Las **NoSQL** funcionan genial con lenguajes como _JavaScript_ y permite puentear las tecnologías de servidor para el acceso a la información.
 
 Las bases de datos **NoSQL** almacenan nuestros datos en un contenedor al que llama _database instance_. Dentro de ese contenedor los datos se separan en secciones llamadas _collections_. Así, es posible tener una _collection_ que almacene usuarios, otra que almacene artículos, otra que almacene comentarios, etcétera. Dentro de cada _collection_ se almacenan los _documents_, que disponen de un único valor. Cada _document_ tiene un identificador único.
 Dentro de este documento, está su información con una disposición muy parecido a un objeto de _JavaScript_, ya que se compone de pares **clave-valor**.
 
-![Figura 1](./resources/img/img1.png)
+![Figura 1](./img/img1.png)
 
 _Firebase_ ofrece varios servicios para la creación de webapps. Uno de ellos es el de almacenamiento de la información. Dispone de dos servicios de bases de datos: _Firestore_ _Database_ y _Realtime_ _Database_. _Realtime_ _Database_ es la primera base de datos que liberó _Firebase_ con una alta eficiencia, baja latencia y capacidades para consultas en tiempo real. _Firestore_ _Database_ es la nueva base de datos diseñada y desarrollada por Google la cual tiene una estructura más fácil de entender y mejoras en los **SDK** para la realización de consultas.
 
@@ -27,7 +31,11 @@ Por lo que respecta a las consultas, _Realtime_ _Database_ presenta serias limit
 
 Por estos motivos, en lo sucesivo se trabajará con _Firestore_ _Database_ quedando la exploración de _Realtime_ _Database_ en manos del discente.
 
+---
+
 ## Creación de una base de datos
+
+---
 
 Será necesario el registro de una nueva cuenta [aquí](https://firebase.google.com/) para poder utilizar estos servicios. Una vez realizado este paso la creación de la base de datos es muy intuitiva y se realiza en tres pasos:
 
@@ -49,7 +57,11 @@ Será necesario revisar la documentación para ampliar estos permisos e incluso 
 
 Tras agregar una webapp al proyecto, los datos de conexión estarán disponibles en su apartado de configuración. Se dispone de varios métodos de conexión. Para el proyecto de muestra se utilizará conexión a través de CDN (_Content Delivery Network_).
 
+---
+
 ## Conectar con la base de datos
+
+---
 
 _Firestore_ utiliza la tecnología de módulos para optimizar la carga de sus bibliotecas, a cuya documentación se podrá acceder desde [aquí](https://firebase.google.com/docs/reference/js/firestore_.md).
 
@@ -94,7 +106,11 @@ const db = getFirestore(app);
 
 El objeto **db** será una conexión directa con _Firestore_. Dispone de una serie de métodos para el manejo de los datos que serán analizados a continuación. No es ocioso encarecer que la consulta a la documentación oficial para ampliar la información es de obligado cumplimiento.
 
+---
+
 ## Leer datos
+
+---
 
 Para la lectura de los datos a través del objeto **db** será necesario la importación de módulos extra:
 
@@ -264,7 +280,11 @@ const consulta = query(
 
 Hay que tener en cuenta que si se incluye una o varias clausulas where el campo de ordenación debe estar presente en ellas, de lo contrario se deberá crear un índice de forma manual para poder realizar este tipo de consultas.
 
+---
+
 ## Escribir datos
+
+---
 
 Para añadir datos a una colección primero se genera un objeto con la estructura que espera la colección y los datos a introducir, por ejemplo, recorriendo un formulario. Después se decide cuál es la mejor manera de introducir el documento en la colección, si con un identificador nuevo, cambiar la estructura de un objeto existente o crear un documento nuevo vacío para usarlo más tarde (que se hace con doc). Para estas tareas es necesario importar varios métodos:
 
@@ -326,7 +346,11 @@ guardarFeoSet("LCy8664CnKt93gzwQfkr");
 
 Cuando se usa setDoc todos las propiedades del objeto que no sean definidas en la escritura serán eliminadas del objeto. Si , por el contrario, se especifica una propiedad nueva será añadida con su nuevo valor. Hay que tener en cuenta esta particularidad.
 
+---
+
 ## Actualizar datos
+
+---
 
 Con el módulo setDoc es posible modificar la información de los documentos de una colección pero había que tener cuidado de especificar todos los datos del objeto ya que, de no ser así, se eliminaban los no declarados en la orden de modificación. _Firestore_ dispone de otro método para actualizar la información de un documento de forma parcial sin que se destruyan las propiedades no especificadas: updateDoc. Como es habitual, hay que importarlo antes de su uso:
 
@@ -380,7 +404,11 @@ const eliminarAficion = async (id) => {
 };
 ```
 
+---
+
 ## Borrar datos
+
+---
 
 Por último, para eliminar documentos de la colección o propiedades de un objeto, será necesario importar nuevos módulos:
 
