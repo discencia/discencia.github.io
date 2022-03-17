@@ -1,6 +1,6 @@
 ---
 layout: page
-title: UT08 Firebase
+title: UT08 - Desarrollo Web en entorno Clientes
 permalink: /dwcut08/
 ---
 
@@ -10,14 +10,18 @@ Es una plataforma de apoyo al desarrollo web en la nube creada por Google. Facil
 
 Uno de los servicios que incluye es el _Firestore_ _Database_ la cual permite disponer de una base de datos no relacional y reactiva que sincroniza datos con todos los clientes conectados en tiempo real. Se tratarán las acciones **CRUD** sobre esta base de datos a través del siguiente ejemplo. Para facilitar el seguimiento del mismo, se aconseja visitar [este enlace](https://firebase.google.com/docs/firestore/manage-data/add-data) donde se detallan más los pasos a seguir. Huelga decir que será necesario disponer de una cuenta en este servicio para poder trabajar con el ejemplo.
 
+---
+
 ## Tipos de bases de datos
+
+---
 
 Existen dos tipos principales de bases de datos: las **SQL** o relacionales y las **NoSQL**. Las primeras son muy populares entre lenguajes como **PHP** y están orientadas a aplicaciones muy complejas (la mayoría de las veces). Las **NoSQL** funcionan genial con lenguajes como _JavaScript_ y permite puentear las tecnologías de servidor para el acceso a la información.
 
 Las bases de datos **NoSQL** almacenan nuestros datos en un contenedor al que llama _database instance_. Dentro de ese contenedor los datos se separan en secciones llamadas _collections_. Así, es posible tener una _collection_ que almacene usuarios, otra que almacene artículos, otra que almacene comentarios, etcétera. Dentro de cada _collection_ se almacenan los _documents_, que disponen de un único valor. Cada _document_ tiene un identificador único.
 Dentro de este documento, está su información con una disposición muy parecido a un objeto de _JavaScript_, ya que se compone de pares **clave-valor**.
 
-![Figura 1](/resoruces/img/img1.png)
+![Figura 1](./img/img1.png)
 
 _Firebase_ ofrece varios servicios para la creación de webapps. Uno de ellos es el de almacenamiento de la información. Dispone de dos servicios de bases de datos: _Firestore_ _Database_ y _Realtime_ _Database_. _Realtime_ _Database_ es la primera base de datos que liberó _Firebase_ con una alta eficiencia, baja latencia y capacidades para consultas en tiempo real. _Firestore_ _Database_ es la nueva base de datos diseñada y desarrollada por Google la cual tiene una estructura más fácil de entender y mejoras en los **SDK** para la realización de consultas.
 
