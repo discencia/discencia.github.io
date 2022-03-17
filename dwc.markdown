@@ -1,6 +1,6 @@
 ---
 layout: page
-title: UT08 - Desarrollo Web en entorno Clientes
+title: UT08 - Firebase
 permalink: /dwcut08/
 ---
 
@@ -17,7 +17,7 @@ Existen dos tipos principales de bases de datos: las **SQL** o relacionales y la
 Las bases de datos **NoSQL** almacenan nuestros datos en un contenedor al que llama _database instance_. Dentro de ese contenedor los datos se separan en secciones llamadas _collections_. Así, es posible tener una _collection_ que almacene usuarios, otra que almacene artículos, otra que almacene comentarios, etcétera. Dentro de cada _collection_ se almacenan los _documents_, que disponen de un único valor. Cada _document_ tiene un identificador único.
 Dentro de este documento, está su información con una disposición muy parecido a un objeto de _JavaScript_, ya que se compone de pares **clave-valor**.
 
-![Figura 1](./img/img1.png)
+![Figura 1](./resources/img/img1.png)
 
 _Firebase_ ofrece varios servicios para la creación de webapps. Uno de ellos es el de almacenamiento de la información. Dispone de dos servicios de bases de datos: _Firestore_ _Database_ y _Realtime_ _Database_. _Realtime_ _Database_ es la primera base de datos que liberó _Firebase_ con una alta eficiencia, baja latencia y capacidades para consultas en tiempo real. _Firestore_ _Database_ es la nueva base de datos diseñada y desarrollada por Google la cual tiene una estructura más fácil de entender y mejoras en los **SDK** para la realización de consultas.
 
